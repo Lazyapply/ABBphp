@@ -67,7 +67,6 @@
 			}
 			else{
 				return false;
-				echo '<b>entro</b><br>';
 			}
 			
 		}
