@@ -48,9 +48,26 @@
 						$this->insertarNodo($valor, $this->nodo[$index]->izq);
 					}
 				}
+				else{//derecha
+					if($this->nodo[$index]->der == null){
+						//creamos el nodo
+						$this->nodo[$this->nNodos] = new Nodo($valor, $this->nNodos);
+						//colocamos al anterior su izq hacia este indice
+						$this->nodo[$index]->der = $this->nNodos;
+						//aumentamos el numero de nodos
+						$this->nNodos++;
+
+						return true;
+					}
+					else{//no es null su izquierda
+						$this->insertarNodo($valor, $this->nodo[$index]->der);
+					}
+				
+				}
 			}
 			else{
 				return false;
+				echo '<b>entro</b><br>';
 			}
 			
 		}
