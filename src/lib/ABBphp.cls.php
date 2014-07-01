@@ -11,6 +11,7 @@
 
 
 		function getData(){return $this->dato;}
+		function getIndex(){return $this->indice;}
 	}
 
 
@@ -19,20 +20,39 @@
 	 	private $nNodos =0;
 
 		function __construct($dato){
+
 			$this->nodo[$this->nNodos] = new Nodo($dato, $this->nNodos);
 			$this->nNodos++;
 		}
 
-
-		function insertarNodo($valor){
+		function varDump(){
+			return var_dump($this->nodo);
+		}
+		function insertarNodo($valor, &$index){
+			
 
 			if($this->buscarNodo($valor) == false){
-				//if($valor < $this->nodo)
-			}
+				//izquierda
+				if($valor < $this->nodo[$index]->dato){
+					if($this->nodo[$index]->izq == null){
+						//creamos el nodo
+						$this->nodo[$this->nNodos] = new Nodo($valor, $this->nNodos);
+						//colocamos al anterior su izq hacia este indice
+						$this->nodo[$index]->izq = $this->nNodos;
+						//aumentamos el numero de nodos
+						$this->nNodos++;
 
-			//insertamos el nodo
-			$this->nodo[$this->nNodos] = new Nodo($dato, $this->nNodos+1);
-			$this->nNodos++;
+						return true;
+					}
+					else{//no es null su izquierda
+						$this->insertarNodo($valor, $this->nodo[$index]->izq);
+					}
+				}
+			}
+			else{
+				return false;
+			}
+			
 		}
 
 		function buscarNodo($valor){

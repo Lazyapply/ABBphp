@@ -8,13 +8,36 @@
 	<?php 
 		require('src/lib/ABBphp.cls.php');
 		
-		$node = new Nodo(6, 0);
-		echo 'Nodo<br><b>'.$node->getData().'</b><br><hr>';
 
-		$ABB = new ABBphp(11);
+		$ABB = new ABBphp(6);
 		echo 'ABB<br><b>'.$ABB->getData(0).'</b><br><hr>';
-		echo ' esta el 11: '.$ABB->buscarNodo(11).'<br>';
-		echo ' esta el 6: '.$ABB->buscarNodo(6).'<br>';
+
+		//Izquierda
+		echo '<br><br>'.$ABB->varDump();
+		$index = 0;
+		echo 'Insertar Nodo 4('.$ABB->insertarNodo(4, $index).'):';
+		echo '<br><br>'.$ABB->varDump();
+		//izquierda
+		echo '<br><hr><br>';
+		$index = 0;
+		echo 'Insertar Nodo 1('.$ABB->insertarNodo(1, $index).'):';
+		echo '<br><br>'.$ABB->varDump();
+		//izquierda
+		echo '<br><hr><br>';
+		$index = 0;
+		echo 'Insertar Nodo 0('.$ABB->insertarNodo(0, $index).'):';
+		echo '<br><br>'.$ABB->varDump();
+		//Repetido (1)
+		echo '<br><hr><br>';
+		$index = 0;
+		echo 'Insertar Nodo 1('.$ABB->insertarNodo(1, $index).'):';
+		echo '<br><br>'.$ABB->varDump();
+		//Izquieda (negativo)
+		echo '<br><hr><br>';
+		$index = 0;
+		echo 'Insertar Nodo -10('.$ABB->insertarNodo(-10, $index).'):';
+		echo '<br><br>'.$ABB->varDump();
+
 	?>
 </body>
 </html>
