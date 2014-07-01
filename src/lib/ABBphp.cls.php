@@ -1,25 +1,51 @@
 <?php
 	class Nodo{
-		private $dato, $izq, $der;
+		protected $dato, $izq, $der, $indice;
 
-		function __construct(){
-			$dato 	= 15;
-			$izq 	= -1;
-			$der 	= -1; 
+		public function __construct($dat, $ind){
+			$this->dato 	= $dat;
+			$this->indice 	= $ind;
+			$this->izq 		= null;
+			$this->der 		= null; 
 		}
 
-		public function getDato(){return $this->dato;}
+
+		function getData(){return $this->dato;}
 	}
 
 
-	class ABBphp{
-	 $nodo = new Nodo();
+	class ABBphp extends Nodo{
+	 	private $nodo = array();
+	 	private $nNodos =0;
 
-		function __construct(){
-			parent::__construct();
-			echo "encendido";
-
+		function __construct($dato){
+			$this->nodo[$this->nNodos] = new Nodo($dato, $this->nNodos);
+			$this->nNodos++;
 		}
+
+
+		function insertarNodo($valor){
+
+			if($this->buscarNodo($valor) == false){
+				//if($valor < $this->nodo)
+			}
+
+			//insertamos el nodo
+			$this->nodo[$this->nNodos] = new Nodo($dato, $this->nNodos+1);
+			$this->nNodos++;
+		}
+
+		function buscarNodo($valor){
+
+			for($i=0;$i<$this->nNodos;$i++){
+				if($this->nodo[$i]->dato == $valor){
+					return true;
+				}
+			}
+			return false;
+		}
+		function getData($index){return $this->nodo[$index]->dato;}
+		function getnNodos(){return $this->nNodos;}
 	}
 
 	
