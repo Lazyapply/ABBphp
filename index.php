@@ -7,7 +7,7 @@
 <body>
 	<?php 
 		//PRUEBAS INSERTAR NODO
-		//header('Location: testInsertarNodo.php'); 
+		header('Location: src/UnitTest/testInsertarNodo.php'); 
 	?>
 </body>
 </html>

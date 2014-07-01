@@ -1,9 +1,9 @@
 	<?php 
-		require('src/lib/ABBphp.cls.php');
+		require('../lib/ABBphp.cls.php');
 		
 
 		$ABB = new ABBphp(6);
-		echo 'ABB<br><b>'.$ABB->getData(0).'</b><br><hr>';
+		echo 'ABB<br><b> Serie: ';
 
 		//----------------INICIO Pruebas izquierda (derecha no implementada aun) -----------------------
 
@@ -67,6 +67,10 @@
 		//--------------- INICIO Pruebas serie completa--------------
 		// Serie de prueba -> 6, 4, 11, 1, 9, 7
 		$serie = array(6, 4, 11, 1, 9, 7);
+		for($i=0;$i<6;$i++)
+			echo $serie[$i].', ';
+
+		echo '<b><br><hr><br>';
 		for($i=0;$i<6;$i++){
 			$x = 0;
 			$ABB->insertarNodo($serie[$i], $x);
