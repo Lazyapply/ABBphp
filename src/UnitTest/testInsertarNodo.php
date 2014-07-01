@@ -66,15 +66,38 @@
 
 		//--------------- INICIO Pruebas serie completa--------------
 		// Serie de prueba -> 6, 4, 11, 1, 9, 7
+		// $serie = array(6, 4, 11, 1, 9, 7);
+		// for($i=0;$i<6;$i++)
+		// 	echo $serie[$i].', ';
+
+		// echo '<b><br><hr><br>';
+		// for($i=0;$i<6;$i++){
+		// 	$x = 0;
+		// 	$ABB->insertarNodo($serie[$i], $x);
+		// }
+			
+		// $ABB->varDump();
+		//--------------- FIN Pruebas serie completa--------------
+
+		//--------------- INICIO Pruebas serie completa (funcion insertarSerie)--------------
+		// Serie de prueba -> 6, 4, 11, 1, 9, 7
 		$serie = array(6, 4, 11, 1, 9, 7);
 		for($i=0;$i<6;$i++)
 			echo $serie[$i].', ';
-
 		echo '<b><br><hr><br>';
-		for($i=0;$i<6;$i++){
-			$x = 0;
-			$ABB->insertarNodo($serie[$i], $x);
-		}
-			
+		$ABB->insertarSerie($serie);
 		$ABB->varDump();
+		//--------------- FIN Pruebas serie completa (funcion insertarSerie)--------------
 	?>
+
+
+
+
+
+
+
+
+
+
+
+

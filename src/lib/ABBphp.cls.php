@@ -81,6 +81,16 @@
 			}
 			return false;
 		}
+
+		function insertarSerie($serie){
+			$fin = sizeof($serie);
+
+			for($i=0;$i<$fin;$i++){
+				$aux = 0;
+				$this->insertarNodo($serie[$i], $aux);
+			}
+		}
+
 		function getData($index){return $this->nodo[$index]->dato;}
 		function getnNodos(){return $this->nNodos;}
 	}
