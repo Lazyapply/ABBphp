@@ -206,7 +206,7 @@
 			return $r;
 		}
 
-		//getters and setters
+		//getters and settersS
 		function getData($index){return $this->nodo[$index]->dato;}
 		function getnNodos(){return $this->nNodos;}
 
