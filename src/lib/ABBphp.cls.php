@@ -1,6 +1,8 @@
 <?php
 	
-	
+	/**
+	 * Clase que simula un nodo Binario, teniendo izquierda, derecha, un indice y un valor que almacenar
+	 */
 	class Nodo{
 		/**
 		 * Dato que almacena el nodo
@@ -25,10 +27,10 @@
 
 		/**
 		 * Constructor por parámetros
-		 * @param int/String $dat Dato que almacena el nodo
-		 * @param int    $ind Indice del nodo
+		 * @param int/String  Dato que almacena el nodo
+		 * @param int     Indice del nodo
 		 */
-		public function __construct($dat, int $ind){
+		public function __construct($dat, $ind){
 			$this->dato 	= $dat;
 			$this->indice 	= $ind;
 			$this->izq 		= null;
@@ -51,7 +53,10 @@
 		}
 	}
 
-
+	/**
+	 * Clase que simula un Arbol de búsqueda binaria.
+	 * Está compuesto por un conjunto de nodos, todos del mismo tipo de dato
+	 */
 	class ABBphp extends Nodo{
 		/**
 		 * Estructura semiEstática para almacenar los nodos, array de nodos
@@ -82,8 +87,8 @@
 		}
 		/**
 		 * Funcion para insertar un nodo en el arbol
-		 * @param  int/String $valor Valor que almacena el nodo
-		 * @param  int $index Indice del nodo, aqui se usa como auxiliar
+		 * @param  int/String  Valor que almacena el nodo
+		 * @param  int  Indice del nodo, aqui se usa como auxiliar
 		 * @return booleano        Verdadero/Falso en caso de Acertar/Fallar la insercion
 		 */
 		function insertarNodo($valor, &$index){
@@ -130,7 +135,7 @@
 		}
 		/**
 		 * Busca un nodo detro del arbol
-		 * @param  int/String $valor Valor que buscamos en el arbol
+		 * @param  int/String  Valor que buscamos en el arbol
 		 * @return booleano        True/False si Está/No está
 		 */
 		function buscarNodo($valor){
@@ -144,7 +149,7 @@
 		}
 		/**
 		 * Función para insertar un serie.
-		 * @param  array([int|String]) $serie Debe pasarse un array de enteros o de Strings
+		 * @param  array([int|String])  Debe pasarse un array de enteros o de Strings
 		 * @return void        [description]
 		 */
 		function insertarSerie($serie){
@@ -157,7 +162,7 @@
 		}
 		/**
 		 * Devuelve el valor de un nodo, en función de su valor
-		 * @param  int/String $valor Valor del nodo que buscamos
+		 * @param  int/String  Valor del nodo que buscamos
 		 * @return int        Indice del nodo que contiene el valor buscado
 		 */
 		function indexFromValue($valor){
@@ -174,7 +179,7 @@
 
 		/**
 		 * Devuelve el padre y el lado del que cuelga en función de un valor
-		 * @param  int/String $valor Valor del nodo
+		 * @param  int/String  Valor del nodo
 		 * @return Array        Array[0] = Indice del padre, Array[1] = Lado del que cuelga
 		 */
 		function parentFromValue($valor){
@@ -207,30 +212,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	}
-
-	
-
-
-	// function borrarNodo($valor){
-
-	// 	if()
-
-	// }
-	
 
  ?>
