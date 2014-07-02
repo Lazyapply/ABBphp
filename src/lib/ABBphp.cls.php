@@ -34,6 +34,13 @@
 		function varDump(){
 			return var_dump($this->nodo);
 		}
+
+		/**
+		 * [insertarNodo description]
+		 * @param  int/string $valor [description]
+		 * @param  int $index [description]
+		 * @return void        [description]
+		 */
 		function insertarNodo($valor, &$index){
 			
 
