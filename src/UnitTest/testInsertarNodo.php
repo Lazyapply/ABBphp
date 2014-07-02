@@ -88,6 +88,11 @@
 		$ABB->insertarSerie($serie);
 		$ABB->varDump();
 		//--------------- FIN Pruebas serie completa (funcion insertarSerie)--------------
+		
+		
+		
+
+		
 	?>
 
 

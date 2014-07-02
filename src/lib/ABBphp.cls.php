@@ -10,8 +10,14 @@
 		}
 
 
-		function getData(){return $this->dato;}
+		//function getData(){return $this->dato;}
 		function getIndex(){return $this->indice;}
+		function esHoja(){
+			if(($this->izq == null) && ($this->der == null))
+				return true;
+			else
+				return false;
+		}
 	}
 
 
@@ -90,12 +96,73 @@
 			}
 		}
 
+		function indexFromValue($valor){
+			$index = -1;
+
+			for($i=0;$i<$this->nNodos;$i++){
+				if($this->nodo[$i]->dato == $valor){
+					$index = $i;
+					return $index;
+				}
+			}
+			return $index;
+		}
+
+
+		function parentFromValue($valor){
+
+			$indiceBuscado = $this->indexFromValue($valor);
+			$r = array();
+			$r[0] = null;
+			$r[1] = -1;
+
+			for($i=0;$i<$this->nNodos;$i++){
+				if($this->nodo[$i]->izq == $indiceBuscado){//es izquierda de su padre
+					$r[0] = $i;
+					$r[1] = 0;
+					return $r;
+				}
+				if($this->nodo[$i]->der == $indiceBuscado){ //es derecha de su padre
+					$r[0] = $i;
+					$r[1] = 1;
+					return $r;
+				}
+			}
+
+			
+			return $r;
+		}
+
+		//getters and setters
 		function getData($index){return $this->nodo[$index]->dato;}
 		function getnNodos(){return $this->nNodos;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 
 	
-	
+
+
+	// function borrarNodo($valor){
+
+	// 	if()
+
+	// }
 	
 
  ?>

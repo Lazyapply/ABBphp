@@ -7,7 +7,9 @@
 <body>
 	<?php 
 		//PRUEBAS INSERTAR NODO
-		header('Location: src/UnitTest/testInsertarNodo.php'); 
+		//header('Location: src/UnitTest/testInsertarNodo.php');
+		//PRUEBAS PADRE DESDE VALOR
+		header('Location: src/UnitTest/testPadrePorValor.php'); 
 	?>
 </body>
 </html>
