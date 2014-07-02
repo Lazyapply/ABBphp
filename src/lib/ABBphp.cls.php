@@ -1,57 +1,6 @@
 <?php
 	
-	/**
-	 * Clase que simula un nodo Binario, teniendo izquierda, derecha, un indice y un valor que almacenar
-	 */
-	class Nodo{
-		/**
-		 * Dato que almacena el nodo
-		 * @var int/String
-		 */
-		protected $dato;
-		/**
-		 * Indice al que apunta la izquierda del nodo
-		 * @var int
-		 */		
-		protected $izq;
-		/**
-		 * Indice al que apunta la derecha del nodo
-		 * @var int
-		 */
-		protected $der;
-		/**
-		 * Indice del nodo
-		 * @var int
-		 */
-		protected $indice;
-
-		/**
-		 * Constructor por parámetros
-		 * @param int/String  Dato que almacena el nodo
-		 * @param int     Indice del nodo
-		 */
-		public function __construct($dat, $ind){
-			$this->dato 	= $dat;
-			$this->indice 	= $ind;
-			$this->izq 		= null;
-			$this->der 		= null; 
-		}
-
-
-		//function getData(){return $this->dato;}
-		function getIndex(){return $this->indice;}
-
-		/**
-		 * Función que devuelve si un nodo es hoja
-		 * @return Booleano Verdadero si es hoja, Falso en caso contrario
-		 */
-		function esHoja(){
-			if(($this->izq == null) && ($this->der == null))
-				return true;
-			else
-				return false;
-		}
-	}
+	require_once 'Nodo.cls.php';
 
 	/**
 	 * Clase que simula un Arbol de búsqueda binaria.
@@ -170,7 +119,7 @@
 
 			for($i=0;$i<$this->nNodos;$i++){
 				if($this->nodo[$i]->dato == $valor){
-					$index = $i;
+					$index = $this->nodo[$i]->indice;
 					return $index;
 				}
 			}
@@ -206,6 +155,75 @@
 			return $r;
 		}
 
+		/**
+		 * Con esta función eliminamos el nodo y se reconstruye el arbol de indices
+		 * @param  int/String Valor del nodo que queremos eliminar
+		 * @return bool        Verdadero si lo hemos eliminado y falso en caso contrario
+		 */
+		function eliminarNodo($valor){
+
+			if($this->buscarNodo($valor)){
+				$indice = $this->indexFromValue($valor);
+				//en caso de ser hoja
+				if($this->nodo[$indice]->esHoja()){
+					//echo '<b>Es HOJA indice: '.$indice.'</b>';
+					$indiceP = $this->parentFromValue($valor);
+					//echo '<br>IndiceNodo: '.$indiceP[0].' -- Lado: '.$indiceP[1];
+					if($indiceP[1] == 0){//si cuelga de la izquierda de su padre
+						$this->nodo[$indiceP[0]]->izq = null;
+						$this->deleteData($indice);
+					}
+					else{//si cuelga de la derecha de su padre
+						$this->nodo[$indiceP[0]]->der = null;
+						$this->deleteData($indice);
+					}
+
+				}
+				else{//no es hoja
+					//si tiene solo hijo derecho
+					if(($this->nodo[$indice]->der != null) && ($this->nodo[$indice]->izq == null)){
+						echo '<b>No es HOJA, le cuelga un Hijo a la derecha indice: '.$indice.'</b>';
+						$indiceP = $this->parentFromValue($valor);
+
+						if($indiceP[1] == 0){//si cuelga de la izquierda de su padre
+						$this->nodo[$indiceP[0]]->izq = $this->nodo[$indice]->der;
+						$this->deleteData($indice);
+						}
+						else{//si cuelga de la derecha de su padre
+							$this->nodo[$indiceP[0]]->der = $this->nodo[$indice]->izq;;
+							$this->deleteData($indice);
+						}
+					}
+					else if(($this->nodo[$indice]->der == null) && ($this->nodo[$indice]->izq != null)){
+						//si tiene solo hijo izquierdo
+						echo '<b>No es HOJA, le cuelga un Hijo a la izquierda indice: '.$indice.'</b>';
+						$indiceP = $this->parentFromValue($valor);
+
+						if($indiceP[1] == 0){//si cuelga de la izquierda de su padre
+						$this->nodo[$indiceP[0]]->izq = $this->nodo[$indice]->izq;
+						$this->deleteData($indice);
+						}
+						else{//si cuelga de la derecha de su padre
+							$this->nodo[$indiceP[0]]->der = $this->nodo[$indice]->der;;
+							$this->deleteData($indice);
+						}
+					}
+
+				}
+			}
+			// return false;
+		}
+		/**
+		 * Pone a nulos todos los valores del nodo, para posteriormente ser identificado como nodo vacio.
+		 * @param  int  Indice del nodo que se quiere preparar para borrar
+		 * @return void
+		 */
+		function deleteData($index){
+			$this->nodo[$index]->izq = null;
+			$this->nodo[$index]->der = null;
+			$this->nodo[$index]->dato = null;
+			$this->nodo[$index]->indice = null;
+		}
 		//getters and setters
 		function getData($index){return $this->nodo[$index]->dato;}
 		function getnNodos(){return $this->nNodos;}

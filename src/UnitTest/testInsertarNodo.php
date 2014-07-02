@@ -3,7 +3,18 @@
 		
 
 		$ABB = new ABBphp(6);
-		echo 'ABB<br><b> Serie: ';
+		echo '
+					<html>
+		
+		<head>
+			<meta charset="UTF-8">
+			<title>ABBT: InsertarNodo</title>
+		</head>
+		<body>
+		';
+	echo '<table border="10" style="width:100%"><tr><td>';
+	echo 'ABB<br><b> Serie: ';
+
 
 		//----------------INICIO Pruebas izquierda (derecha no implementada aun) -----------------------
 
@@ -84,15 +95,16 @@
 		$serie = array(6, 4, 11, 1, 9, 7);
 		for($i=0;$i<6;$i++)
 			echo $serie[$i].', ';
-		echo '<b><br><hr><br>';
+		echo '<b><br><hr><br></td><td>';
 		$ABB->insertarSerie($serie);
 		$ABB->varDump();
+		
 		//--------------- FIN Pruebas serie completa (funcion insertarSerie)--------------
 		
 		
 		
 
-		
+		echo '</td></tr></tabl></body></html>'
 	?>
 
 

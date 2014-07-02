@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class ABBphp | ABB Class</title>
+	<title>Class ABBphp | ABB php</title>
 
 	<script type="text/javascript" src="resources/combined.js?2072791610"></script>
 	<script type="text/javascript" src="elementlist.js?1905699340"></script>
@@ -105,7 +105,7 @@ conjunto de nodos, todos del mismo tipo de dato</p>
 		
 		
 
-		<b>Located at</b> <a href="source-class-ABBphp.html#56-215" title="Go to source code">ABBphp.cls.php</a><br />
+		<b>Located at</b> <a href="source-class-ABBphp.html#5-233" title="Go to source code">ABBphp.cls.php</a><br />
 	</div>
 
 
@@ -123,7 +123,7 @@ conjunto de nodos, todos del mismo tipo de dato</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-ABBphp.html#72-80" title="Go to source code">__construct</a>( <span>int/String <var>$dato</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#21-29" title="Go to source code">__construct</a>( <span>int/String <var>$dato</var></span> )</code>
 
 		<div class="description short">
 			
@@ -165,7 +165,7 @@ del arbol</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_varDump">#</a>
-		<code><a href="source-class-ABBphp.html#81-87" title="Go to source code">varDump</a>( )</code>
+		<code><a href="source-class-ABBphp.html#30-36" title="Go to source code">varDump</a>( )</code>
 
 		<div class="description short">
 			
@@ -202,7 +202,7 @@ del arbol</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insertarNodo">#</a>
-		<code><a href="source-class-ABBphp.html#88-135" title="Go to source code">insertarNodo</a>( <span>int/String <var>$valor</var></span>, <span>integer <var>&amp; $index</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#37-84" title="Go to source code">insertarNodo</a>( <span>int/String <var>$valor</var></span>, <span>integer <var>&amp; $index</var></span> )</code>
 
 		<div class="description short">
 			
@@ -246,7 +246,7 @@ del arbol</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_buscarNodo">#</a>
-		<code><a href="source-class-ABBphp.html#136-149" title="Go to source code">buscarNodo</a>( <span>int/String <var>$valor</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#85-98" title="Go to source code">buscarNodo</a>( <span>int/String <var>$valor</var></span> )</code>
 
 		<div class="description short">
 			
@@ -288,7 +288,7 @@ del arbol</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insertarSerie">#</a>
-		<code><a href="source-class-ABBphp.html#150-162" title="Go to source code">insertarSerie</a>( <span>array([int|String]) <var>$serie</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#99-111" title="Go to source code">insertarSerie</a>( <span>array([int|String]) <var>$serie</var></span> )</code>
 
 		<div class="description short">
 			
@@ -330,7 +330,7 @@ del arbol</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_indexFromValue">#</a>
-		<code><a href="source-class-ABBphp.html#163-178" title="Go to source code">indexFromValue</a>( <span>int/String <var>$valor</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#112-127" title="Go to source code">indexFromValue</a>( <span>int/String <var>$valor</var></span> )</code>
 
 		<div class="description short">
 			
@@ -372,7 +372,7 @@ del arbol</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_parentFromValue">#</a>
-		<code><a href="source-class-ABBphp.html#180-207" title="Go to source code">parentFromValue</a>( <span>int/String <var>$valor</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#129-156" title="Go to source code">parentFromValue</a>( <span>int/String <var>$valor</var></span> )</code>
 
 		<div class="description short">
 			
@@ -403,6 +403,88 @@ del arbol</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="eliminarNodo" id="_eliminarNodo">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_eliminarNodo">#</a>
+		<code><a href="source-class-ABBphp.html#158-215" title="Go to source code">eliminarNodo</a>( <span>int/String <var>$valor</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Con esta función eliminamos el nodo y se reconstruye el arbol de indices</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Con esta función eliminamos el nodo y se reconstruye el arbol de indices</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$valor</var></dt>
+					<dd><code>int/String</code><br>Valor del nodo que queremos eliminar</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Verdadero si lo hemos eliminado y falso en caso contrario<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteData" id="_deleteData">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteData">#</a>
+		<code><a href="source-class-ABBphp.html#216-226" title="Go to source code">deleteData</a>( <span>integer <var>$index</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Pone a nulos todos los valores del nodo, para posteriormente ser identificado
+como nodo vacio.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Pone a nulos todos los valores del nodo, para posteriormente ser identificado
+como nodo vacio.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$index</var></dt>
+					<dd><code>integer</code><br>Indice del nodo que se quiere preparar para borrar</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getData" id="_getData">
 
 		<td class="attributes"><code>
@@ -414,7 +496,7 @@ del arbol</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getData">#</a>
-		<code><a href="source-class-ABBphp.html#210" title="Go to source code">getData</a>( <span>mixed <var>$index</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#228" title="Go to source code">getData</a>( <span>mixed <var>$index</var></span> )</code>
 
 		<div class="description short">
 			
@@ -443,7 +525,7 @@ del arbol</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getnNodos">#</a>
-		<code><a href="source-class-ABBphp.html#211" title="Go to source code">getnNodos</a>( )</code>
+		<code><a href="source-class-ABBphp.html#229" title="Go to source code">getnNodos</a>( )</code>
 
 		<div class="description short">
 			
@@ -503,7 +585,7 @@ del arbol</p>
 </div>
 
 	<div id="footer">
-		ABB Class API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+		ABB php API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
 	</div>
 </div>
 </div>

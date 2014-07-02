@@ -9,7 +9,9 @@
 		//PRUEBAS INSERTAR NODO
 		//header('Location: src/UnitTest/testInsertarNodo.php');
 		//PRUEBAS PADRE DESDE VALOR
-		header('Location: src/UnitTest/testPadrePorValor.php'); 
+		//header('Location: src/UnitTest/testPadrePorValor.php');
+		//PRUEBAS ELIMINAR NODO
+		header('Location: src/UnitTest/testEliminarNodo.php');
 	?>
 </body>
 </html>
