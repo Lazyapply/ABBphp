@@ -89,7 +89,7 @@
 		
 		
 
-		<b>Located at</b> <a href="source-class-Nodo.html#2-21" title="Go to source code">ABBphp.cls.php</a><br />
+		<b>Located at</b> <a href="source-class-Nodo.html#4-52" title="Go to source code">ABBphp.cls.php</a><br />
 	</div>
 
 
@@ -107,16 +107,27 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Nodo.html#5-10" title="Go to source code">__construct</a>( <span>mixed <var>$dat</var></span>, <span>mixed <var>$ind</var></span> )</code>
+		<code><a href="source-class-Nodo.html#26-36" title="Go to source code">__construct</a>( <span>int/String <var>$dat</var></span>, <span>integer <var>$ind</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Constructor por parámetros</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Constructor por parámetros</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$dat</var></dt>
+					<dd><code>int/String</code><br>$dat Dato que almacena el nodo</dd>
+					<dt><var>$ind</var></dt>
+					<dd><code>integer</code><br>$ind Indice del nodo</dd>
+				</dl></div>
 
 
 
@@ -136,7 +147,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getIndex">#</a>
-		<code><a href="source-class-Nodo.html#14" title="Go to source code">getIndex</a>( )</code>
+		<code><a href="source-class-Nodo.html#40" title="Go to source code">getIndex</a>( )</code>
 
 		<div class="description short">
 			
@@ -158,24 +169,32 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			Booleano
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_esHoja">#</a>
-		<code><a href="source-class-Nodo.html#15-20" title="Go to source code">esHoja</a>( )</code>
+		<code><a href="source-class-Nodo.html#42-51" title="Go to source code">esHoja</a>( )</code>
 
 		<div class="description short">
 			
+<p>Función que devuelve si un nodo es hoja</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Función que devuelve si un nodo es hoja</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Booleano</code><br>Verdadero si es hoja, Falso en caso contrario<br />
+				</div>
 
 
 
@@ -201,11 +220,11 @@
 	<tr data-order="dato" id="$dato">
 		<td class="attributes"><code>
 			protected  
-			mixed
+			int/String
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Nodo.html#3" title="Go to source code"><var>$dato</var></a>
+				<a href="source-class-Nodo.html#5-9" title="Go to source code"><var>$dato</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -213,10 +232,14 @@
 
 			<div class="description short">
 				
+<p>Dato que almacena el nodo</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>Dato que almacena el nodo</p>
+
 
 			</div>
 		</div></td>
@@ -224,11 +247,11 @@
 	<tr data-order="izq" id="$izq">
 		<td class="attributes"><code>
 			protected  
-			mixed
+			integer
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Nodo.html#3" title="Go to source code"><var>$izq</var></a>
+				<a href="source-class-Nodo.html#10-14" title="Go to source code"><var>$izq</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -236,10 +259,14 @@
 
 			<div class="description short">
 				
+<p>Indice al que apunta la izquierda del nodo</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>Indice al que apunta la izquierda del nodo</p>
+
 
 			</div>
 		</div></td>
@@ -247,11 +274,11 @@
 	<tr data-order="der" id="$der">
 		<td class="attributes"><code>
 			protected  
-			mixed
+			integer
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Nodo.html#3" title="Go to source code"><var>$der</var></a>
+				<a href="source-class-Nodo.html#15-19" title="Go to source code"><var>$der</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -259,10 +286,14 @@
 
 			<div class="description short">
 				
+<p>Indice al que apunta la derecha del nodo</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>Indice al que apunta la derecha del nodo</p>
+
 
 			</div>
 		</div></td>
@@ -270,11 +301,11 @@
 	<tr data-order="indice" id="$indice">
 		<td class="attributes"><code>
 			protected  
-			mixed
+			integer
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Nodo.html#3" title="Go to source code"><var>$indice</var></a>
+				<a href="source-class-Nodo.html#20-24" title="Go to source code"><var>$indice</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -282,10 +313,14 @@
 
 			<div class="description short">
 				
+<p>Indice del nodo</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>Indice del nodo</p>
+
 
 			</div>
 		</div></td>

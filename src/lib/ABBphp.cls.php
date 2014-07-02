@@ -1,8 +1,34 @@
 <?php
+	
+	
 	class Nodo{
-		protected $dato, $izq, $der, $indice;
+		/**
+		 * Dato que almacena el nodo
+		 * @var int/String
+		 */
+		protected $dato;
+		/**
+		 * Indice al que apunta la izquierda del nodo
+		 * @var int
+		 */		
+		protected $izq;
+		/**
+		 * Indice al que apunta la derecha del nodo
+		 * @var int
+		 */
+		protected $der;
+		/**
+		 * Indice del nodo
+		 * @var int
+		 */
+		protected $indice;
 
-		public function __construct($dat, $ind){
+		/**
+		 * Constructor por parámetros
+		 * @param int/String $dat Dato que almacena el nodo
+		 * @param int    $ind Indice del nodo
+		 */
+		public function __construct($dat, int $ind){
 			$this->dato 	= $dat;
 			$this->indice 	= $ind;
 			$this->izq 		= null;
@@ -12,6 +38,11 @@
 
 		//function getData(){return $this->dato;}
 		function getIndex(){return $this->indice;}
+
+		/**
+		 * Función que devuelve si un nodo es hoja
+		 * @return Booleano Verdadero si es hoja, Falso en caso contrario
+		 */
 		function esHoja(){
 			if(($this->izq == null) && ($this->der == null))
 				return true;
@@ -22,24 +53,38 @@
 
 
 	class ABBphp extends Nodo{
+		/**
+		 * Estructura semiEstática para almacenar los nodos, array de nodos
+		 * @var array
+		 */
 	 	private $nodo = array();
+	 	/**
+	 	 * Total de nodos que hay en la estructura
+	 	 * @var integer
+	 	 */
 	 	private $nNodos =0;
 
+	 	/**
+	 	 * Cuando llamamos al constructor debemos pasarle un valor, para el nodo padre del arbol
+	 	 * @param int/String Valor que almacena el nodo
+	 	 */
 		function __construct($dato){
 
 			$this->nodo[$this->nNodos] = new Nodo($dato, $this->nNodos);
 			$this->nNodos++;
 		}
-
+		/**
+		 * Devuelve el dump de array de nodos
+		 * @return dump Dump del array de memoria principal
+		 */
 		function varDump(){
 			return var_dump($this->nodo);
 		}
-
 		/**
-		 * [insertarNodo description]
-		 * @param  int/string $valor [description]
-		 * @param  int $index [description]
-		 * @return void        [description]
+		 * Funcion para insertar un nodo en el arbol
+		 * @param  int/String $valor Valor que almacena el nodo
+		 * @param  int $index Indice del nodo, aqui se usa como auxiliar
+		 * @return booleano        Verdadero/Falso en caso de Acertar/Fallar la insercion
 		 */
 		function insertarNodo($valor, &$index){
 			
@@ -83,7 +128,11 @@
 			}
 			
 		}
-
+		/**
+		 * Busca un nodo detro del arbol
+		 * @param  int/String $valor Valor que buscamos en el arbol
+		 * @return booleano        True/False si Está/No está
+		 */
 		function buscarNodo($valor){
 
 			for($i=0;$i<$this->nNodos;$i++){
@@ -93,7 +142,11 @@
 			}
 			return false;
 		}
-
+		/**
+		 * Función para insertar un serie.
+		 * @param  array([int|String]) $serie Debe pasarse un array de enteros o de Strings
+		 * @return void        [description]
+		 */
 		function insertarSerie($serie){
 			$fin = sizeof($serie);
 
@@ -102,7 +155,11 @@
 				$this->insertarNodo($serie[$i], $aux);
 			}
 		}
-
+		/**
+		 * Devuelve el valor de un nodo, en función de su valor
+		 * @param  int/String $valor Valor del nodo que buscamos
+		 * @return int        Indice del nodo que contiene el valor buscado
+		 */
 		function indexFromValue($valor){
 			$index = -1;
 
@@ -115,7 +172,11 @@
 			return $index;
 		}
 
-
+		/**
+		 * Devuelve el padre y el lado del que cuelga en función de un valor
+		 * @param  int/String $valor Valor del nodo
+		 * @return Array        Array[0] = Indice del padre, Array[1] = Lado del que cuelga
+		 */
 		function parentFromValue($valor){
 
 			$indiceBuscado = $this->indexFromValue($valor);

@@ -99,7 +99,7 @@
 		
 		
 
-		<b>Located at</b> <a href="source-class-ABBphp.html#24-163" title="Go to source code">ABBphp.cls.php</a><br />
+		<b>Located at</b> <a href="source-class-ABBphp.html#55-224" title="Go to source code">ABBphp.cls.php</a><br />
 	</div>
 
 
@@ -117,16 +117,27 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-ABBphp.html#28-32" title="Go to source code">__construct</a>( <span>mixed <var>$dato</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#67-75" title="Go to source code">__construct</a>( <span>int/String <var>$dato</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Cuando llamamos al constructor debemos pasarle un valor, para el nodo padre
+del arbol</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Cuando llamamos al constructor debemos pasarle un valor, para el nodo padre
+del arbol</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$dato</var></dt>
+					<dd><code>int/String</code><br>Valor que almacena el nodo</dd>
+				</dl></div>
 
 
 
@@ -141,24 +152,32 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			dump
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_varDump">#</a>
-		<code><a href="source-class-ABBphp.html#34-36" title="Go to source code">varDump</a>( )</code>
+		<code><a href="source-class-ABBphp.html#76-82" title="Go to source code">varDump</a>( )</code>
 
 		<div class="description short">
 			
+<p>Devuelve el dump de array de nodos</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Devuelve el dump de array de nodos</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>dump</code><br>Dump del array de memoria principal<br />
+				</div>
 
 
 
@@ -170,38 +189,38 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			booleano
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insertarNodo">#</a>
-		<code><a href="source-class-ABBphp.html#38-85" title="Go to source code">insertarNodo</a>( <span>int/string <var>$valor</var></span>, <span>integer <var>&amp; $index</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#83-130" title="Go to source code">insertarNodo</a>( <span>int/String <var>$valor</var></span>, <span>integer <var>&amp; $index</var></span> )</code>
 
 		<div class="description short">
 			
-<p>[insertarNodo description]</p>
+<p>Funcion para insertar un nodo en el arbol</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>[insertarNodo description]</p>
+<p>Funcion para insertar un nodo en el arbol</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$valor</var></dt>
-					<dd><code>int/string</code><br>$valor [description]</dd>
+					<dd><code>int/String</code><br>$valor Valor que almacena el nodo</dd>
 					<dt><var>$index</var></dt>
-					<dd><code>integer</code><br>$index [description]</dd>
+					<dd><code>integer</code><br>$index Indice del nodo, aqui se usa como auxiliar</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code></code><br>[description]<br />
+					<code>booleano</code><br>Verdadero/Falso en caso de Acertar/Fallar la insercion<br />
 				</div>
 
 
@@ -214,24 +233,37 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			booleano
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_buscarNodo">#</a>
-		<code><a href="source-class-ABBphp.html#87-95" title="Go to source code">buscarNodo</a>( <span>mixed <var>$valor</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#131-144" title="Go to source code">buscarNodo</a>( <span>int/String <var>$valor</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Busca un nodo detro del arbol</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Busca un nodo detro del arbol</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$valor</var></dt>
+					<dd><code>int/String</code><br>$valor Valor que buscamos en el arbol</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>booleano</code><br>True/False si Está/No está<br />
+				</div>
 
 
 
@@ -250,17 +282,30 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insertarSerie">#</a>
-		<code><a href="source-class-ABBphp.html#97-104" title="Go to source code">insertarSerie</a>( <span>mixed <var>$serie</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#145-157" title="Go to source code">insertarSerie</a>( <span>array([int|String]) <var>$serie</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Función para insertar un serie.</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Función para insertar un serie.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$serie</var></dt>
+					<dd><code>array([int|String])</code><br>$serie Debe pasarse un array de enteros o de Strings</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code></code><br>[description]<br />
+				</div>
 
 
 
@@ -272,24 +317,37 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			integer
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_indexFromValue">#</a>
-		<code><a href="source-class-ABBphp.html#106-116" title="Go to source code">indexFromValue</a>( <span>mixed <var>$valor</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#158-173" title="Go to source code">indexFromValue</a>( <span>int/String <var>$valor</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Devuelve el valor de un nodo, en función de su valor</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Devuelve el valor de un nodo, en función de su valor</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$valor</var></dt>
+					<dd><code>int/String</code><br>$valor Valor del nodo que buscamos</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>Indice del nodo que contiene el valor buscado<br />
+				</div>
 
 
 
@@ -301,24 +359,37 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			Array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_parentFromValue">#</a>
-		<code><a href="source-class-ABBphp.html#119-141" title="Go to source code">parentFromValue</a>( <span>mixed <var>$valor</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#175-202" title="Go to source code">parentFromValue</a>( <span>int/String <var>$valor</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Devuelve el padre y el lado del que cuelga en función de un valor</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Devuelve el padre y el lado del que cuelga en función de un valor</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$valor</var></dt>
+					<dd><code>int/String</code><br>$valor Valor del nodo</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>Array[0] = Indice del padre, Array[1] = Lado del que cuelga<br />
+				</div>
 
 
 
@@ -337,7 +408,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getData">#</a>
-		<code><a href="source-class-ABBphp.html#144" title="Go to source code">getData</a>( <span>mixed <var>$index</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#205" title="Go to source code">getData</a>( <span>mixed <var>$index</var></span> )</code>
 
 		<div class="description short">
 			
@@ -366,7 +437,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getnNodos">#</a>
-		<code><a href="source-class-ABBphp.html#145" title="Go to source code">getnNodos</a>( )</code>
+		<code><a href="source-class-ABBphp.html#206" title="Go to source code">getnNodos</a>( )</code>
 
 		<div class="description short">
 			
