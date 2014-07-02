@@ -5,3 +5,5 @@ ABBphp
 
 Con esta clase se pretende poder generar de forma gráfica árboles de búsqueda binarios utilizando CANVAS
 de HTML5, PHP y JavaScript.
+
+Para aprender el uso, abre la carpeta src/lib/Docs
