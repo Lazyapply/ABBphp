@@ -17,20 +17,22 @@
 
 
 	
-	$serie = array(6, 4, 11, 1, 9, 7, 3);
-		for($i=0;$i<7;$i++)
+	$serie = array(6, 4, 11, 1, 9, 7, 3, 12, 10);
+	$f = sizeof($serie);
+		for($i=0;$i<$f;$i++)
 			echo $serie[$i].', ';
 		echo '</a><br><hr><br>';
 		$ABB->insertarSerie($serie);
 		
+		
+		echo '</td><td>';
 		echo '<hr><br>';
 
 		echo '<h3>Comprobaciones</h3>';
 		echo '<a>Test nodo Hoja: </a> OK <br>';
 		echo '<a>Test solo hijo derecho: </a> OK <br>';
-		echo '<a>Test  solo hijo izquierdo: </a> ACTUAL <br>';
-		echo '<a>Test nodo Hoja: </a> -- <br>';
-		echo '</td><td>';
+		echo '<a>Test  solo hijo izquierdo: </a> OK <br>';
+		echo '<a>Test nodo Hoja: </a> ACTUAL <br><hr><br>';
 		$ABB->varDump();
 		echo '</td>';
 	//Test nodo Hoja
@@ -47,12 +49,27 @@
 	// $ABB->varDump();
 	// echo '<hr><br>';
 
-	//Testo solo hijo izquierdo
-	echo '<td>Quiero eliminar el nodo con valor 4 <br><hr><br>';
-	$ABB->eliminarNodo(4);
+	//Test solo hijo izquierdo
+	// echo '<td>Quiero eliminar el nodo con valor 4 <br><hr><br>';
+	// $ABB->eliminarNodo(4);
+	// echo '<hr><br>';
+	// $ABB->varDump();
+	// echo '<hr><br>';
+
+	//Test cuelga subarbol
+	// echo '<td>Quiero eliminar el nodo con valor 11 <br><hr><br>';
+	// $ABB->eliminarNodo(11);
+	// echo '<hr><br>';
+	// $ABB->varDump();
+	// echo '<hr><br>';
+
+	//Test cuelga subarbol 2
+	echo '<td>Quiero eliminar el nodo con valor 9 <br><hr><br>';
+	$ABB->eliminarNodo(9);
 	echo '<hr><br>';
 	$ABB->varDump();
 	echo '<hr><br>';
+
 
 
 	echo '</td></tr></table></body></html>';

@@ -64,7 +64,7 @@
 					if($this->nodo[$index]->der == null){
 						//creamos el nodo
 						$this->nodo[$this->nNodos] = new Nodo($valor, $this->nNodos);
-						//colocamos al anterior su izq hacia este indice
+						//colocamos al anterior su der hacia este indice
 						$this->nodo[$index]->der = $this->nNodos;
 						//aumentamos el numero de nodos
 						$this->nNodos++;
@@ -186,8 +186,8 @@
 						$indiceP = $this->parentFromValue($valor);
 
 						if($indiceP[1] == 0){//si cuelga de la izquierda de su padre
-						$this->nodo[$indiceP[0]]->izq = $this->nodo[$indice]->der;
-						$this->deleteData($indice);
+							$this->nodo[$indiceP[0]]->izq = $this->nodo[$indice]->der;
+							$this->deleteData($indice);
 						}
 						else{//si cuelga de la derecha de su padre
 							$this->nodo[$indiceP[0]]->der = $this->nodo[$indice]->izq;;
@@ -200,11 +200,41 @@
 						$indiceP = $this->parentFromValue($valor);
 
 						if($indiceP[1] == 0){//si cuelga de la izquierda de su padre
-						$this->nodo[$indiceP[0]]->izq = $this->nodo[$indice]->izq;
-						$this->deleteData($indice);
+							$this->nodo[$indiceP[0]]->izq = $this->nodo[$indice]->izq;
+							$this->deleteData($indice);
 						}
 						else{//si cuelga de la derecha de su padre
 							$this->nodo[$indiceP[0]]->der = $this->nodo[$indice]->der;;
+							$this->deleteData($indice);
+						}
+					}
+					else{//En caso de que cuelgue un subarbol
+						$indiceP = $this->parentFromValue($valor);
+						//si cuelga del padre por la derecha
+						if($indiceP[1] == 1){
+							//la derecha del padre apunta a la izquierda del nodo a borrar
+							$this->nodo[$indiceP[0]]->der = $this->nodo[$indice]->izq;
+							//Buscamos el subarbol mas a la derecha de la izquierda del nodo a borrar
+							$i = $this->nodo[$indice]->izq;
+							while($this->nodo[$i]->der){
+								$i = $this->nodo[$i]->der;
+							}
+							echo "Nodo mas a la derecha: ".$this->nodo[$i]->indice;
+							//Apuntamos la derecha del nodo mas a la derecha a la derecha del nodo a borrar
+							$this->nodo[$i]->der = $this->nodo[$indice]->der;
+						}
+						else{//si cuelga del padre por la izquierda
+							//la izquierda del padre apunta a la derecha del nodo a borrar
+							$this->nodo[$indiceP[0]]->izq = $this->nodo[$indice]->izq;
+							//Buscamos el subarbol mas a la izquierda de la derecha del nodo a borrar
+							$i = $this->nodo[$indice]->izq;
+							while($this->nodo[$i]->izq){
+								$i = $this->nodo[$i]->izq;
+							}
+							echo "Nodo mas a la izquierda: ".$this->nodo[$i]->indice;
+							//Apuntamos la derecha del nodo mas a la derecha a la derecha del nodo a borrar
+							$this->nodo[$i]->der = $this->nodo[$indice]->der;
+							//borramos el nodo
 							$this->deleteData($indice);
 						}
 					}
