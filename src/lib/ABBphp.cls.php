@@ -36,9 +36,9 @@
 		}
 		/**
 		 * Funcion para insertar un nodo en el arbol
-		 * @param  int/String  Valor que almacena el nodo
-		 * @param  int  Indice del nodo, aqui se usa como auxiliar
-		 * @return booleano        Verdadero/Falso en caso de Acertar/Fallar la insercion
+		 * @param  int/String  Valor que almacena el nodos
+		 * @param  int  indice del nodo
+		 * @return void        
 		 */
 		function insertarNodo($valor, &$index){
 			
@@ -99,7 +99,7 @@
 		/**
 		 * Función para insertar un serie.
 		 * @param  array([int|String])  Debe pasarse un array de enteros o de Strings
-		 * @return void        [description]
+		 * @return void        
 		 */
 		function insertarSerie($serie){
 			$fin = sizeof($serie);
