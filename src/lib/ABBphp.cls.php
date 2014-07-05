@@ -11,12 +11,12 @@
 		 * Estructura semiEstática para almacenar los nodos, array de nodos
 		 * @var array
 		 */
-	 	private $nodo = array();
+	 	protected $nodo = array();
 	 	/**
 	 	 * Total de nodos que hay en la estructura
 	 	 * @var integer
 	 	 */
-	 	private $nNodos =0;
+	 	protected $nNodos =0;
 
 	 	/**
 	 	 * Cuando llamamos al constructor debemos pasarle un valor, para el nodo padre del arbol
@@ -253,6 +253,18 @@
 			$this->nodo[$index]->der = null;
 			$this->nodo[$index]->dato = null;
 			$this->nodo[$index]->indice = null;
+		}
+
+		function index2memIndex($indice){
+			$index = -1;
+
+			for($i=0;$i<$this->nNodos;$i++){
+				if($this->nodo[$i]->indice == $indice){
+					$index = $i;
+					return $index;
+				}
+			}
+			return $index;
 		}
 		//getters and setters
 		function getData($index){return $this->nodo[$index]->dato;}

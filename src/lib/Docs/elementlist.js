@@ -1,3 +1,3 @@
 
 var ApiGen = ApiGen || {};
-ApiGen.elements = [["c","ABBphp"],["c","Nodo"]];
+ApiGen.elements = [["c","ABBGraph"],["c","ABBphp"],["c","Nodo"]];
