@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pruebas Dibujo nodos</title>
-	<script src="../js/abbGraph.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="../js/abbGraph.js" type="text/javascript" charset="utf-8"></script>
 	
 </head>
 <body>
@@ -13,22 +13,24 @@
 	<?php 
 		require_once('../lib/ABBGraph.cls.php');
 
-		$ABBG = new abbGraph(1, 800, 600, 1);
+		$ABBG = new ABBGraph(1, 800, 600, 1);
 		
-		echo '<table border="10" style="width:100%"><tr><td>';
+		echo '<table border="10" style="width:50%"><tr><td>';
 		echo 'ABB<br><b> Serie: ';
 
 		$serie = array(6, 4, 11, 1, 9, 7);
 		for($i=0;$i<6;$i++)
 			echo $serie[$i].', ';
-		echo '<b><br><hr><br></td><td>';
+		echo '<b><br><hr><br></td><td> Dibujo el nodo con indice 5';
 
 		$ABBG->insertarSerie($serie);
-		$ABBG->varDump();
+		// $ABBG->varDump();
 		echo '</td></tr></table><br><br>';
 		$ABBG->generateGraph();
-		
+
+
 	 ?>	
 	
+	<!--  <script>drawNode(100,100,50,'green',5,7);</script>-->
 </body>
 </html>

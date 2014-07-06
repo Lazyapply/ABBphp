@@ -115,22 +115,189 @@ separado.</p>
 		
 		
 
-		<b>Located at</b> <a href="source-class-ABBGraph.html#4-11" title="Go to source code">ABBGraph.cls.php</a><br />
+		<b>Located at</b> <a href="source-class-ABBGraph.html#4-75" title="Go to source code">ABBGraph.cls.php</a><br />
 	</div>
 
 
 
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-ABBGraph.html#15-27" title="Go to source code">__construct</a>( <span>int/String <var>$val</var></span>, <span>float <var>$width</var></span>, <span>float <var>$height</var></span>, <span>boolean <var>$border</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Constructor de ABBGraph</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Constructor de ABBGraph</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$val</var></dt>
+					<dd><code>int/String</code><br>Es el valor que toma el nodo padre, llamado en el contructor de Nodo</dd>
+					<dt><var>$width</var></dt>
+					<dd><code>float</code><br>Ancho del Canvas que va a usar la clase</dd>
+					<dt><var>$height</var></dt>
+					<dd><code>float</code><br>Alto del Canvas que va a usar la clase</dd>
+					<dt><var>$border</var></dt>
+					<dd><code>boolean</code><br>1 muestra el borde y 0 no, del canvas</dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-ABBphp.html#___construct">ABBphp::__construct()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createCanvas" id="_createCanvas">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createCanvas">#</a>
+		<code><a href="source-class-ABBGraph.html#29-40" title="Go to source code">createCanvas</a>( )</code>
+
+		<div class="description short">
+			
+<p>Crea el canvas para la clase</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Crea el canvas para la clase</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>Cuerpo del canvas con los valores del constructor<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="drawNode" id="_drawNode">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_drawNode">#</a>
+		<code><a href="source-class-ABBGraph.html#42-64" title="Go to source code">drawNode</a>( <span>integer <var>$indice</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Esta función devuelve el codigo de llamada en Js para dibujar un nodo</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Esta función devuelve el codigo de llamada en Js para dibujar un nodo</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$indice</var></dt>
+					<dd><code>integer</code><br>Indice del nodo que se quiere dibujar en el lienzo</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>String de llamada a la función<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="generateGraph" id="_generateGraph">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_generateGraph">#</a>
+		<code><a href="source-class-ABBGraph.html#66-74" title="Go to source code">generateGraph</a>( )</code>
+
+		<div class="description short">
+			
+<p>Con esta función se genera todo lo necesario para la representación
+gráfica del ABB</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Con esta función se genera todo lo necesario para la representación
+gráfica del ABB</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>Codigo de representación.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
 
 	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-ABBphp.html#methods">ABBphp</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-ABBphp.html#___construct">__construct()</a>, 
 			<a href="class-ABBphp.html#_buscarNodo">buscarNodo()</a>, 
 			<a href="class-ABBphp.html#_deleteData">deleteData()</a>, 
 			<a href="class-ABBphp.html#_eliminarNodo">eliminarNodo()</a>, 
 			<a href="class-ABBphp.html#_getData">getData()</a>, 
 			<a href="class-ABBphp.html#_getnNodos">getnNodos()</a>, 
+			<a href="class-ABBphp.html#_index2memIndex">index2memIndex()</a>, 
 			<a href="class-ABBphp.html#_indexFromValue">indexFromValue()</a>, 
 			<a href="class-ABBphp.html#_insertarNodo">insertarNodo()</a>, 
 			<a href="class-ABBphp.html#_insertarSerie">insertarSerie()</a>, 
@@ -160,6 +327,15 @@ separado.</p>
 
 
 
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-ABBphp.html#properties">ABBphp</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-ABBphp.html#$nNodos"><var>$nNodos</var></a>, 
+			<a href="class-ABBphp.html#$nodo"><var>$nodo</var></a>
+		</code></td>
+	</tr>
+	</table>
 	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-Nodo.html#properties">Nodo</a></caption>
 	<tr>

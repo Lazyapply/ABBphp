@@ -11,7 +11,9 @@
 		//PRUEBAS PADRE DESDE VALOR
 		//header('Location: src/UnitTest/testPadrePorValor.php');
 		//PRUEBAS ELIMINAR NODO
-		header('Location: src/UnitTest/testEliminarNodo.php');
+		//header('Location: src/UnitTest/testEliminarNodo.php');
+		//PRUEBAS CANVAS
+		header('Location: src/UnitTest/drawToCanvasTest.php');
 	?>
 </body>
 </html>

@@ -82,12 +82,12 @@
 </span></span><span id="11" class="l"><a class="l" href="#11"> 11: </a><span class="php-comment">         * Estructura semiEstática para almacenar los nodos, array de nodos
 </span></span><span id="12" class="l"><a class="l" href="#12"> 12: </a><span class="php-comment">         * @var array
 </span></span><span id="13" class="l"><a class="l" href="#13"> 13: </a><span class="php-comment">         */</span>
-</span><span id="14" class="l"><a class="l" href="#14"> 14: </a>        <span class="php-keyword1">private</span> <span class="php-var"><a id="$nodo" href="#$nodo">$nodo</a></span> = <span class="php-keyword1">array</span>();
+</span><span id="14" class="l"><a class="l" href="#14"> 14: </a>        <span class="php-keyword1">protected</span> <span class="php-var"><a id="$nodo" href="#$nodo">$nodo</a></span> = <span class="php-keyword1">array</span>();
 </span><span id="15" class="l"><a class="l" href="#15"> 15: </a>        <span class="php-comment">/**
 </span></span><span id="16" class="l"><a class="l" href="#16"> 16: </a><span class="php-comment">         * Total de nodos que hay en la estructura
 </span></span><span id="17" class="l"><a class="l" href="#17"> 17: </a><span class="php-comment">         * @var integer
 </span></span><span id="18" class="l"><a class="l" href="#18"> 18: </a><span class="php-comment">         */</span>
-</span><span id="19" class="l"><a class="l" href="#19"> 19: </a>        <span class="php-keyword1">private</span> <span class="php-var"><a id="$nNodos" href="#$nNodos">$nNodos</a></span> =<span class="php-num">0</span>;
+</span><span id="19" class="l"><a class="l" href="#19"> 19: </a>        <span class="php-keyword1">protected</span> <span class="php-var"><a id="$nNodos" href="#$nNodos">$nNodos</a></span> =<span class="php-num">0</span>;
 </span><span id="20" class="l"><a class="l" href="#20"> 20: </a>
 </span><span id="21" class="l"><a class="l" href="#21"> 21: </a>        <span class="php-comment">/**
 </span></span><span id="22" class="l"><a class="l" href="#22"> 22: </a><span class="php-comment">         * Cuando llamamos al constructor debemos pasarle un valor, para el nodo padre del arbol
@@ -325,15 +325,27 @@
 </span><span id="254" class="l"><a class="l" href="#254">254: </a>            <span class="php-var">$this</span>-&gt;nodo[<span class="php-var">$index</span>]-&gt;dato = <span class="php-keyword1">null</span>;
 </span><span id="255" class="l"><a class="l" href="#255">255: </a>            <span class="php-var">$this</span>-&gt;nodo[<span class="php-var">$index</span>]-&gt;indice = <span class="php-keyword1">null</span>;
 </span><span id="256" class="l"><a class="l" href="#256">256: </a>        }
-</span><span id="257" class="l"><a class="l" href="#257">257: </a>        <span class="php-comment">//getters and setters</span>
-</span><span id="258" class="l"><a class="l" href="#258">258: </a>        <span class="php-keyword1">function</span> <a id="_getData" href="#_getData">getData</a>(<span class="php-var">$index</span>){<span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;nodo[<span class="php-var">$index</span>]-&gt;dato;}
-</span><span id="259" class="l"><a class="l" href="#259">259: </a>        <span class="php-keyword1">function</span> <a id="_getnNodos" href="#_getnNodos">getnNodos</a>(){<span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;nNodos;}
+</span><span id="257" class="l"><a class="l" href="#257">257: </a>
+</span><span id="258" class="l"><a class="l" href="#258">258: </a>        <span class="php-keyword1">function</span> <a id="_index2memIndex" href="#_index2memIndex">index2memIndex</a>(<span class="php-var">$indice</span>){
+</span><span id="259" class="l"><a class="l" href="#259">259: </a>            <span class="php-var">$index</span> = -<span class="php-num">1</span>;
 </span><span id="260" class="l"><a class="l" href="#260">260: </a>
-</span><span id="261" class="l"><a class="l" href="#261">261: </a>
-</span><span id="262" class="l"><a class="l" href="#262">262: </a>
-</span><span id="263" class="l"><a class="l" href="#263">263: </a>    }
-</span><span id="264" class="l"><a class="l" href="#264">264: </a>
-</span><span id="265" class="l"><a class="l" href="#265">265: </a></span> <span class="xlang">?&gt;</span></code></pre>
+</span><span id="261" class="l"><a class="l" href="#261">261: </a>            <span class="php-keyword1">for</span>(<span class="php-var">$i</span>=<span class="php-num">0</span>;<span class="php-var">$i</span>&lt;<span class="php-var">$this</span>-&gt;nNodos;<span class="php-var">$i</span>++){
+</span><span id="262" class="l"><a class="l" href="#262">262: </a>                <span class="php-keyword1">if</span>(<span class="php-var">$this</span>-&gt;nodo[<span class="php-var">$i</span>]-&gt;indice == <span class="php-var">$indice</span>){
+</span><span id="263" class="l"><a class="l" href="#263">263: </a>                    <span class="php-var">$index</span> = <span class="php-var">$i</span>;
+</span><span id="264" class="l"><a class="l" href="#264">264: </a>                    <span class="php-keyword1">return</span> <span class="php-var">$index</span>;
+</span><span id="265" class="l"><a class="l" href="#265">265: </a>                }
+</span><span id="266" class="l"><a class="l" href="#266">266: </a>            }
+</span><span id="267" class="l"><a class="l" href="#267">267: </a>            <span class="php-keyword1">return</span> <span class="php-var">$index</span>;
+</span><span id="268" class="l"><a class="l" href="#268">268: </a>        }
+</span><span id="269" class="l"><a class="l" href="#269">269: </a>        <span class="php-comment">//getters and setters</span>
+</span><span id="270" class="l"><a class="l" href="#270">270: </a>        <span class="php-keyword1">function</span> <a id="_getData" href="#_getData">getData</a>(<span class="php-var">$index</span>){<span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;nodo[<span class="php-var">$index</span>]-&gt;dato;}
+</span><span id="271" class="l"><a class="l" href="#271">271: </a>        <span class="php-keyword1">function</span> <a id="_getnNodos" href="#_getnNodos">getnNodos</a>(){<span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;nNodos;}
+</span><span id="272" class="l"><a class="l" href="#272">272: </a>
+</span><span id="273" class="l"><a class="l" href="#273">273: </a>
+</span><span id="274" class="l"><a class="l" href="#274">274: </a>
+</span><span id="275" class="l"><a class="l" href="#275">275: </a>    }
+</span><span id="276" class="l"><a class="l" href="#276">276: </a>
+</span><span id="277" class="l"><a class="l" href="#277">277: </a></span> <span class="xlang">?&gt;</span></code></pre>
 
 	<div id="footer">
 		Graphic ABB php API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

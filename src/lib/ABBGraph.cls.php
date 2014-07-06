@@ -11,8 +11,14 @@
 		private $c_width;
 		private $c_height;
 		private $border;
-		private $bodyStr;
 
+		/**
+		 * Constructor de ABBGraph
+		 * @param int/String Es el valor que toma el nodo padre, llamado en el contructor de Nodo
+		 * @param float Ancho del Canvas que va a usar la clase
+		 * @param float Alto del Canvas que va a usar la clase
+		 * @param bool 1 muestra el borde y 0 no, del canvas
+		 */
 		function __construct($val ,$width, $height, $border){
 			ABBphp::__construct($val);
 			$this->c_width 	= $width;
@@ -20,33 +26,51 @@
 			$this->border = $border;
 		}
 
+		/**
+		 * Crea el canvas para la clase
+		 * @return String Cuerpo del canvas con los valores del constructor
+		 */
 		function createCanvas(){
-			$this->bodyStr = '<canvas width="300" height="300" id="lienzo"';
+			$bodyStr = '<canvas width="300" height="300" id="lienzo"';
 			if ($this->border == 1)
-				$this->bodyStr .= ' style="border:1px solid #000000;"';
+				$bodyStr .= ' style="border:1px solid #000000;"';
 			
-			$this->bodyStr .= ' >';
+			$bodyStr .= ' >';
+			echo $bodyStr;
 		}
 
+		/**
+		 * Esta función devuelve el codigo de llamada en Js para dibujar un nodo
+		 * @param  int Indice del nodo que se quiere dibujar en el lienzo
+		 * @return String         String de llamada a la función
+		 */
 		function drawNode($indice){
 			$memIndex = $this->index2memIndex($indice);
-			
+			$button = '';
+
 			$x = 100;
 			$y = 100;
 			$r = 50;
-			$c = 'green';
+			$c = "'green'";
 			$i =  $this->nodo[$memIndex]->indice;
 			$v =  $this->nodo[$memIndex]->dato;
 
-			return  '<Script>drawNode('.$x.','.$y.','.$r.','.$c.','.$i.','.$v.');</Script>';
+			// $button .= '<input type="button" value="Dibujar Nodo" ';
+			// $button .= ' onclick= "drawNode('.$x.','.$y.','.$r.','.$c.','.$i.','.$v.');" ';
+			// $button .= '>';
+			
+			$button = '<script>drawNode('.$x.','.$y.','.$r.','.$c.','.$i.','.$v.');</script>';
+			echo  $button;
 		}
 
+		/**
+		 * Con esta función se genera todo lo necesario para la representación gráfica del ABB
+		 * @return String Codigo de representación.
+		 */
 		function generateGraph(){
-			//cuerpo
 			$this->createCanvas();
-			echo $this->bodyStr;
-			//nodo
-			echo $this->drawNode(5);
+			$this->drawNode(5);
+		
 		}
 	}
 
