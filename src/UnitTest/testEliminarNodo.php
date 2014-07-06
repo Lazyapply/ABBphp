@@ -17,7 +17,7 @@
 
 
 	
-	$serie = array(6, 4, 11, 1, 9, 7, 3, 12, 10);
+	$serie = array(6, 4, 11, 1, 9, 7, 3, 12, 10, 15);
 	$f = sizeof($serie);
 		for($i=0;$i<$f;$i++)
 			echo $serie[$i].', ';
@@ -32,7 +32,7 @@
 		echo '<a>Test nodo Hoja: </a> OK <br>';
 		echo '<a>Test solo hijo derecho: </a> OK <br>';
 		echo '<a>Test  solo hijo izquierdo: </a> OK <br>';
-		echo '<a>Test nodo Hoja: </a> ACTUAL <br><hr><br>';
+		echo '<a>Test subarbol+memoria: </a> OK <br><hr><br>';
 		$ABB->varDump();
 		echo '</td>';
 	//Test nodo Hoja
@@ -64,7 +64,8 @@
 	// echo '<hr><br>';
 
 	//Test cuelga subarbol 2
-	echo '<td>Quiero eliminar el nodo con valor 9 <br><hr><br>';
+	echo '<td>Quiero eliminar el nodo con valor 9<br><hr><br>';
+	
 	$ABB->eliminarNodo(9);
 	echo '<hr><br>';
 	$ABB->varDump();

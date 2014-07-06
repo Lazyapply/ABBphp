@@ -140,12 +140,12 @@
 
 			for($i=0;$i<$this->nNodos;$i++){
 				if($this->nodo[$i]->izq == $indiceBuscado){//es izquierda de su padre
-					$r[0] = $i;
+					$r[0] = $this->nodo[$i]->indice;
 					$r[1] = 0;
 					return $r;
 				}
 				if($this->nodo[$i]->der == $indiceBuscado){ //es derecha de su padre
-					$r[0] = $i;
+					$r[0] = $this->nodo[$i]->indice;
 					$r[1] = 1;
 					return $r;
 				}
@@ -182,7 +182,7 @@
 				else{//no es hoja
 					//si tiene solo hijo derecho
 					if(($this->nodo[$indice]->der != null) && ($this->nodo[$indice]->izq == null)){
-						echo '<b>No es HOJA, le cuelga un Hijo a la derecha indice: '.$indice.'</b>';
+						//echo '<b>No es HOJA, le cuelga un Hijo a la derecha indice: '.$indice.'</b>';
 						$indiceP = $this->parentFromValue($valor);
 
 						if($indiceP[1] == 0){//si cuelga de la izquierda de su padre
@@ -196,7 +196,7 @@
 					}
 					else if(($this->nodo[$indice]->der == null) && ($this->nodo[$indice]->izq != null)){
 						//si tiene solo hijo izquierdo
-						echo '<b>No es HOJA, le cuelga un Hijo a la izquierda indice: '.$indice.'</b>';
+						//echo '<b>No es HOJA, le cuelga un Hijo a la izquierda indice: '.$indice.'</b>';
 						$indiceP = $this->parentFromValue($valor);
 
 						if($indiceP[1] == 0){//si cuelga de la izquierda de su padre
@@ -219,7 +219,7 @@
 							while($this->nodo[$i]->der){
 								$i = $this->nodo[$i]->der;
 							}
-							echo "Nodo mas a la derecha: ".$this->nodo[$i]->indice;
+							//echo "Nodo mas a la derecha: ".$this->nodo[$i]->indice;
 							//Apuntamos la derecha del nodo mas a la derecha a la derecha del nodo a borrar
 							$this->nodo[$i]->der = $this->nodo[$indice]->der;
 						}
@@ -231,7 +231,7 @@
 							while($this->nodo[$i]->izq){
 								$i = $this->nodo[$i]->izq;
 							}
-							echo "Nodo mas a la izquierda: ".$this->nodo[$i]->indice;
+							//echo "Nodo mas a la izquierda: ".$this->nodo[$i]->indice;
 							//Apuntamos la derecha del nodo mas a la derecha a la derecha del nodo a borrar
 							$this->nodo[$i]->der = $this->nodo[$indice]->der;
 							//borramos el nodo
@@ -244,17 +244,25 @@
 			// return false;
 		}
 		/**
-		 * Pone a nulos todos los valores del nodo, para posteriormente ser identificado como nodo vacio.
+		 * Reorganiza la memoria para no dejar huecos libres. Retrasa una posicion el array y borra el ultimo elemento. 
 		 * @param  int  Indice del nodo que se quiere preparar para borrar
 		 * @return void
 		 */
 		function deleteData($index){
-			$this->nodo[$index]->izq = null;
-			$this->nodo[$index]->der = null;
-			$this->nodo[$index]->dato = null;
-			$this->nodo[$index]->indice = null;
+
+			for($i=$index;$i<($this->nNodos-1);$i++)
+				$this->nodo[$i] = $this->nodo[$i+1];
+
+			unset($this->nodo[$this->nNodos - 1]);
+			$this->nNodos -=1;
+			
 		}
 
+		/**
+		 * Devuelve el indice en la memoria en función del indice del nodo
+		 * @param  int Indice interno del nodo
+		 * @return int         indice que ocupa el nodo en el array de memoria
+		 */
 		function index2memIndex($indice){
 			$index = -1;
 

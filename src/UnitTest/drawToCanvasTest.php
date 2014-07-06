@@ -21,7 +21,7 @@
 		$serie = array(6, 4, 11, 1, 9, 7);
 		for($i=0;$i<6;$i++)
 			echo $serie[$i].', ';
-		echo '<b><br><hr><br></td><td> Dibujo el nodo con indice 5';
+		echo '<b><br><hr><br></td><td> Dibujo el nodo con indice 4';
 
 		$ABBG->insertarSerie($serie);
 		// $ABBG->varDump();

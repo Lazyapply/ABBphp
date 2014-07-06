@@ -102,7 +102,7 @@
 </span></span><span id="31" class="l"><a class="l" href="#31">31: </a><span class="php-comment">         * @return String Cuerpo del canvas con los valores del constructor
 </span></span><span id="32" class="l"><a class="l" href="#32">32: </a><span class="php-comment">         */</span>
 </span><span id="33" class="l"><a class="l" href="#33">33: </a>        <span class="php-keyword1">function</span> <a id="_createCanvas" href="#_createCanvas">createCanvas</a>(){
-</span><span id="34" class="l"><a class="l" href="#34">34: </a>            <span class="php-var">$bodyStr</span> = <span class="php-quote">'&lt;canvas width=&quot;300&quot; height=&quot;300&quot; id=&quot;lienzo&quot;'</span>;
+</span><span id="34" class="l"><a class="l" href="#34">34: </a>            <span class="php-var">$bodyStr</span> = <span class="php-quote">'&lt;canvas width=&quot;'</span>.<span class="php-var">$this</span>-&gt;c_width.<span class="php-quote">'&quot; height=&quot;'</span>.<span class="php-var">$this</span>-&gt;c_height.<span class="php-quote">'&quot; id=&quot;lienzo&quot;'</span>;
 </span><span id="35" class="l"><a class="l" href="#35">35: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;border == <span class="php-num">1</span>)
 </span><span id="36" class="l"><a class="l" href="#36">36: </a>                <span class="php-var">$bodyStr</span> .= <span class="php-quote">' style=&quot;border:1px solid #000000;&quot;'</span>;
 </span><span id="37" class="l"><a class="l" href="#37">37: </a>            
@@ -125,28 +125,27 @@
 </span><span id="54" class="l"><a class="l" href="#54">54: </a>            <span class="php-var">$c</span> = <span class="php-quote">&quot;'green'&quot;</span>;
 </span><span id="55" class="l"><a class="l" href="#55">55: </a>            <span class="php-var">$i</span> =  <span class="php-var">$this</span>-&gt;nodo[<span class="php-var">$memIndex</span>]-&gt;indice;
 </span><span id="56" class="l"><a class="l" href="#56">56: </a>            <span class="php-var">$v</span> =  <span class="php-var">$this</span>-&gt;nodo[<span class="php-var">$memIndex</span>]-&gt;dato;
-</span><span id="57" class="l"><a class="l" href="#57">57: </a>
-</span><span id="58" class="l"><a class="l" href="#58">58: </a>            <span class="php-comment">// $button .= '&lt;input type=&quot;button&quot; value=&quot;Dibujar Nodo&quot; ';</span>
-</span><span id="59" class="l"><a class="l" href="#59">59: </a>            <span class="php-comment">// $button .= ' onclick= &quot;drawNode('.$x.','.$y.','.$r.','.$c.','.$i.','.$v.');&quot; ';</span>
-</span><span id="60" class="l"><a class="l" href="#60">60: </a>            <span class="php-comment">// $button .= '&gt;';</span>
-</span><span id="61" class="l"><a class="l" href="#61">61: </a>            
-</span><span id="62" class="l"><a class="l" href="#62">62: </a>            <span class="php-var">$button</span> = <span class="php-quote">'&lt;script&gt;drawNode('</span>.<span class="php-var">$x</span>.<span class="php-quote">','</span>.<span class="php-var">$y</span>.<span class="php-quote">','</span>.<span class="php-var">$r</span>.<span class="php-quote">','</span>.<span class="php-var">$c</span>.<span class="php-quote">','</span>.<span class="php-var">$i</span>.<span class="php-quote">','</span>.<span class="php-var">$v</span>.<span class="php-quote">');&lt;/script&gt;'</span>;
-</span><span id="63" class="l"><a class="l" href="#63">63: </a>            <span class="php-keyword1">echo</span>  <span class="php-var">$button</span>;
-</span><span id="64" class="l"><a class="l" href="#64">64: </a>        }
-</span><span id="65" class="l"><a class="l" href="#65">65: </a>
-</span><span id="66" class="l"><a class="l" href="#66">66: </a>        <span class="php-comment">/**
-</span></span><span id="67" class="l"><a class="l" href="#67">67: </a><span class="php-comment">         * Con esta función se genera todo lo necesario para la representación gráfica del ABB
-</span></span><span id="68" class="l"><a class="l" href="#68">68: </a><span class="php-comment">         * @return String Codigo de representación.
-</span></span><span id="69" class="l"><a class="l" href="#69">69: </a><span class="php-comment">         */</span>
-</span><span id="70" class="l"><a class="l" href="#70">70: </a>        <span class="php-keyword1">function</span> <a id="_generateGraph" href="#_generateGraph">generateGraph</a>(){
-</span><span id="71" class="l"><a class="l" href="#71">71: </a>            <span class="php-var">$this</span>-&gt;createCanvas();
-</span><span id="72" class="l"><a class="l" href="#72">72: </a>            <span class="php-var">$this</span>-&gt;drawNode(<span class="php-num">5</span>);
-</span><span id="73" class="l"><a class="l" href="#73">73: </a>        
-</span><span id="74" class="l"><a class="l" href="#74">74: </a>        }
-</span><span id="75" class="l"><a class="l" href="#75">75: </a>    }
+</span><span id="57" class="l"><a class="l" href="#57">57: </a>            
+</span><span id="58" class="l"><a class="l" href="#58">58: </a>            <span class="php-var">$button</span> = <span class="php-quote">'drawNode('</span>.<span class="php-var">$x</span>.<span class="php-quote">','</span>.<span class="php-var">$y</span>.<span class="php-quote">','</span>.<span class="php-var">$r</span>.<span class="php-quote">','</span>.<span class="php-var">$c</span>.<span class="php-quote">','</span>.<span class="php-var">$i</span>.<span class="php-quote">','</span>.<span class="php-var">$v</span>.<span class="php-quote">');'</span>;
+</span><span id="59" class="l"><a class="l" href="#59">59: </a>            <span class="php-keyword1">echo</span>  <span class="php-var">$button</span>;
+</span><span id="60" class="l"><a class="l" href="#60">60: </a>        }
+</span><span id="61" class="l"><a class="l" href="#61">61: </a>
+</span><span id="62" class="l"><a class="l" href="#62">62: </a>        <span class="php-comment">/**
+</span></span><span id="63" class="l"><a class="l" href="#63">63: </a><span class="php-comment">         * Con esta función se genera todo lo necesario para la representación gráfica del ABB
+</span></span><span id="64" class="l"><a class="l" href="#64">64: </a><span class="php-comment">         * @return String Codigo de representación.
+</span></span><span id="65" class="l"><a class="l" href="#65">65: </a><span class="php-comment">         */</span>
+</span><span id="66" class="l"><a class="l" href="#66">66: </a>        <span class="php-keyword1">function</span> <a id="_generateGraph" href="#_generateGraph">generateGraph</a>(){
+</span><span id="67" class="l"><a class="l" href="#67">67: </a>            <span class="php-comment">//Canvas</span>
+</span><span id="68" class="l"><a class="l" href="#68">68: </a>            <span class="php-var">$this</span>-&gt;createCanvas();
+</span><span id="69" class="l"><a class="l" href="#69">69: </a>            <span class="php-comment">//Scripts de dibujo</span>
+</span><span id="70" class="l"><a class="l" href="#70">70: </a>            <span class="php-keyword1">echo</span> <span class="php-quote">'&lt;script&gt;'</span>;
+</span><span id="71" class="l"><a class="l" href="#71">71: </a>            <span class="php-var">$this</span>-&gt;drawNode(<span class="php-num">4</span>);
+</span><span id="72" class="l"><a class="l" href="#72">72: </a>            <span class="php-keyword1">echo</span> <span class="php-quote">'&lt;/script&gt;'</span>;
+</span><span id="73" class="l"><a class="l" href="#73">73: </a>        }
+</span><span id="74" class="l"><a class="l" href="#74">74: </a>    }
+</span><span id="75" class="l"><a class="l" href="#75">75: </a>
 </span><span id="76" class="l"><a class="l" href="#76">76: </a>
-</span><span id="77" class="l"><a class="l" href="#77">77: </a>
-</span><span id="78" class="l"><a class="l" href="#78">78: </a></span> <span class="xlang">?&gt;</span></code></pre>
+</span><span id="77" class="l"><a class="l" href="#77">77: </a></span> <span class="xlang">?&gt;</span></code></pre>
 
 	<div id="footer">
 		Graphic ABB php API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

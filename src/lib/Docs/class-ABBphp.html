@@ -110,7 +110,7 @@ conjunto de nodos, todos del mismo tipo de dato</p>
 		
 		
 
-		<b>Located at</b> <a href="source-class-ABBphp.html#5-275" title="Go to source code">ABBphp.cls.php</a><br />
+		<b>Located at</b> <a href="source-class-ABBphp.html#5-283" title="Go to source code">ABBphp.cls.php</a><br />
 	</div>
 
 
@@ -453,19 +453,19 @@ del arbol</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_deleteData">#</a>
-		<code><a href="source-class-ABBphp.html#246-256" title="Go to source code">deleteData</a>( <span>integer <var>$index</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#246-259" title="Go to source code">deleteData</a>( <span>integer <var>$index</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Pone a nulos todos los valores del nodo, para posteriormente ser identificado
-como nodo vacio.</p>
+<p>Reorganiza la memoria para no dejar huecos libres. Retrasa una posicion el
+array y borra el ultimo elemento.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Pone a nulos todos los valores del nodo, para posteriormente ser identificado
-como nodo vacio.</p>
+<p>Reorganiza la memoria para no dejar huecos libres. Retrasa una posicion el
+array y borra el ultimo elemento.</p>
 
 
 
@@ -486,24 +486,37 @@ como nodo vacio.</p>
 
 		<td class="attributes"><code>
 			 public 
-			
+			integer
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_index2memIndex">#</a>
-		<code><a href="source-class-ABBphp.html#258-268" title="Go to source code">index2memIndex</a>( <span>mixed <var>$indice</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#261-276" title="Go to source code">index2memIndex</a>( <span>integer <var>$indice</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Devuelve el indice en la memoria en función del indice del nodo</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Devuelve el indice en la memoria en función del indice del nodo</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$indice</var></dt>
+					<dd><code>integer</code><br>Indice interno del nodo</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>indice que ocupa el nodo en el array de memoria<br />
+				</div>
 
 
 
@@ -522,7 +535,7 @@ como nodo vacio.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getData">#</a>
-		<code><a href="source-class-ABBphp.html#270" title="Go to source code">getData</a>( <span>mixed <var>$index</var></span> )</code>
+		<code><a href="source-class-ABBphp.html#278" title="Go to source code">getData</a>( <span>mixed <var>$index</var></span> )</code>
 
 		<div class="description short">
 			
@@ -551,7 +564,7 @@ como nodo vacio.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getnNodos">#</a>
-		<code><a href="source-class-ABBphp.html#271" title="Go to source code">getnNodos</a>( )</code>
+		<code><a href="source-class-ABBphp.html#279" title="Go to source code">getnNodos</a>( )</code>
 
 		<div class="description short">
 			

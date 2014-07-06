@@ -31,7 +31,7 @@
 		 * @return String Cuerpo del canvas con los valores del constructor
 		 */
 		function createCanvas(){
-			$bodyStr = '<canvas width="300" height="300" id="lienzo"';
+			$bodyStr = '<canvas width="'.$this->c_width.'" height="'.$this->c_height.'" id="lienzo"';
 			if ($this->border == 1)
 				$bodyStr .= ' style="border:1px solid #000000;"';
 			
@@ -54,12 +54,8 @@
 			$c = "'green'";
 			$i =  $this->nodo[$memIndex]->indice;
 			$v =  $this->nodo[$memIndex]->dato;
-
-			// $button .= '<input type="button" value="Dibujar Nodo" ';
-			// $button .= ' onclick= "drawNode('.$x.','.$y.','.$r.','.$c.','.$i.','.$v.');" ';
-			// $button .= '>';
 			
-			$button = '<script>drawNode('.$x.','.$y.','.$r.','.$c.','.$i.','.$v.');</script>';
+			$button = 'drawNode('.$x.','.$y.','.$r.','.$c.','.$i.','.$v.');';
 			echo  $button;
 		}
 
@@ -68,9 +64,12 @@
 		 * @return String Codigo de representación.
 		 */
 		function generateGraph(){
+			//Canvas
 			$this->createCanvas();
-			$this->drawNode(5);
-		
+			//Scripts de dibujo
+			echo '<script>';
+			$this->drawNode(4);
+			echo '</script>';
 		}
 	}
 
