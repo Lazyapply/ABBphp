@@ -14,7 +14,7 @@
 	 	protected $nodo = array();
 	 	/**
 	 	 * Total de nodos que hay en la estructura
-	 	 * @var integer
+	 	 * @var int
 	 	 */
 	 	protected $nNodos =0;
 
