@@ -31,6 +31,6 @@
 
 	 ?>	
 	
-	<!--  <script>drawNode(100,100,50,'green',5,7);</script>-->
+	
 </body>
 </html>

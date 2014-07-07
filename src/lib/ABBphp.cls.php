@@ -274,9 +274,51 @@
 			}
 			return $index;
 		}
+		/**
+		 * Funcion para imprimir el ABB en función del modo que se pase como parámetro
+		 * @param  string Modo de lectura del arbol. IN -> InOrder, PR -> PreOrder, PO -> PostOrder.
+		 * @return array       Vector con los elementos extraidos del arbol segun el modo
+		 */
+		function imprimirArbol($mode='IN'){
+			$padreActual;
+			$lc = 0;
+			$list = array();
+			$i=0;
+
+			switch ($mode){
+				case 'IN':
+					//Nodo mas a la izquierda
+					while($this->nodo[$i]->izq){
+						//Si ya lo hemos capturado
+						if(in_array($this->nodo[$i]->valor, $this->nodo[$i])){
+							//Si tiene hijo (no es hoja)
+							if(!$this->nodo[$i]->esHoja()){
+								//TODO
+								echo 'Aun queda un rato...';
+							}
+						}
+					}
+
+
+
+					break;
+					
+				
+				default:
+					return null;
+					break;
+
+			}
+			
+			
+			
+		}
+
+
 		//getters and setters
 		function getData($index){return $this->nodo[$index]->dato;}
 		function getnNodos(){return $this->nNodos;}
+		function getDataStructure(){return $this->nodo;}
 
 
 
