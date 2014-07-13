@@ -17,18 +17,23 @@
 
 
 		
-		$serie = array(6, 4, 11, 1, 9, 7, 3, 12, 10, 15);
+		$serie = array(6, 12, 3, 4);
 		$f = sizeof($serie);
 		for($i=0;$i<$f;$i++)
 			echo $serie[$i].', ';
-		echo '<b><br><hr><br></td><td>';
+
 		$ABB->insertarSerie($serie);
-		$ABB->varDump();
-		
+		echo '<br><br><hr>';
 		//--------------- INICIO Pruebas Imprimir Arbol--------------
-		$ABB->imprimirArbol($ABB->getDataStructure());
+		$ABB->imprimirArbol('IN');
 		
 		//--------------- FIN Pruebas Imprimir Arbol--------------
+
+		echo '<b><br><hr><br></td><td>';
+		
+		$ABB->varDump();
+		
+
 
 		echo '</td></tr></tabl></body></html>'
 	?>
